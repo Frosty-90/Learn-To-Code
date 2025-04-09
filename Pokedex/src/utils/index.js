@@ -95,9 +95,10 @@ export const pokemonTypeColors = {
 
 
 export function getPokedexNumber(index) {
-    return index + 1
+    return index + 1 // index here is zero-based and you're just adjusting it to match Pokédex numbering (which starts at 1)
 }
 
 export function getFullPokedexNumber(index) {
-    return `${index + 1 > 99 ? index + 1 : index + 1 > 9 ? `0${index + 1}` : `00${index + 1}`}`
+    const number = index + 1; 
+    return number.toString().padStart(3, '0'); //The padStart() method ensures the number is always 3 digits long.
 }
